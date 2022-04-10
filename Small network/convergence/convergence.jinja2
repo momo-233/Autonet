@@ -1,0 +1,60 @@
+q
+u t m
+
+sys
+sys {{name}}
+vlan batch {{vlans}}
+
+{% for ports,trunk_vlan in passvlan.items() %}
+int g{{ports}}
+port link-type trunk
+port trunk allow-pass vlan {{trunk_vlan}}
+{% endfor %}
+q
+{#至此完成二层端口类型配置#}
+
+stp enable
+stp mode mstp
+stp region-configuration
+region-name simp
+{% for instance,vlan in mstp.items() %}
+instance {{instance}} vlan {{vlan}}
+{% endfor %} 
+active region-configuration
+
+q
+stp instance 1 root {{primary}}
+stp instance 2 root {{secondary}}
+{#通过dis stp instance brief 查看根桥选举状态配置状态#}
+{#通过dis stp 查看stp配置状态#}
+{#设置汇聚层交换机1作为实例1的根桥，交换机2作为实例2的根桥#}
+{#至此MSTP配置完成#}
+
+{% for vlanif,ipadd in svi.items() %}
+int vlan {{vlanif}}
+ip add {{ipadd}}
+{% endfor %}
+{#至此SVI配置完成#}
+
+{% for vlanif,ipadd in vrrp.items() %}
+int vlan {{vlanif}}
+vrrp vrid {{vlanif}} virtual-ip {{ipadd}}
+{% endfor %}
+
+{% for vrid in priority %}
+int vlan {{vrid}}
+vrrp vrid {{vrid}} priority 120
+{% endfor %} 
+{#通过dis vrrp 查看vrrp配置状态#}
+{#至此vrrp配置完毕#}
+
+
+
+
+
+{#   链路聚合
+int Eth-Trunk 1
+{% for ports in port_aggregation %}
+trunk port g{{ports}}
+{% endfor %}    
+                                    #}

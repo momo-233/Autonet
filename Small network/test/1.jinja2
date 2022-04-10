@@ -1,0 +1,18 @@
+system
+
+sysname {{ name }}
+
+interface Loopback0
+ ip address {{ id }} 255.255.255.255
+
+{% for vlan, name in vlans.items() %}
+    int {{vlan}}
+ port trunk allow-pass vlan {{name}}
+{% endfor %}
+
+ospf 1 router-id {{ id }}
+ {% for networks in ospf %}
+  area {{ networks.area }}
+  network {{ networks.network }}
+  quit
+ {% endfor %}

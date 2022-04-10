@@ -1,0 +1,32 @@
+system
+
+sysname Layer3Switch-3
+
+interface Loopback0
+ ip address 192.168.3.3 255.255.255.255
+
+
+    int 0/0/1
+ port trunk allow-pass vlan Marketing
+
+    int 0/0/2
+ port trunk allow-pass vlan Voice
+
+    int 0/0/3
+ port trunk allow-pass vlan Management
+
+
+ospf 1 router-id 192.168.3.3
+ 
+  area 0
+  network 10.0.1.0 0.0.0.255
+  quit
+ 
+  area 2
+  network 10.0.2.0 0.0.0.255
+  quit
+ 
+  area 0
+  network 10.1.1.0 0.0.0.255
+  quit
+ 

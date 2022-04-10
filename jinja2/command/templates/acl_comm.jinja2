@@ -1,0 +1,10 @@
+user-interface {{ interface }}
+
+acl {{acl}}
+
+{% for host in disallow_ip %}
+rule deny source {{ host }} 0
+{% endfor %}
+
+int g0/0/1
+traffic-filter inbound acl {{acl}}

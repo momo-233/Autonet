@@ -1,0 +1,25 @@
+q
+u t m
+
+sys
+sys {{name}}
+vlan batch {{vlans}}
+
+int g0/0/1
+port link-type access
+port default vlan {{vlan}}
+
+int g0/0/2
+port link-type trunk
+port trunk allow-pass vlan {{trunk_vlan}}
+
+int g0/0/3
+port link-type trunk
+port trunk allow-pass vlan {{trunk_vlan}}
+
+q
+stp region-configuration
+region-name simp
+instance 1 vlan 10 20
+instance 2 vlan 30 40
+active region-configuration
