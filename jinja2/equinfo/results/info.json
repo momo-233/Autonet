@@ -1,0 +1,60 @@
+[
+    
+    {
+        "name": "192.168.11.11",
+        "connection_info": {
+            "device_type": "huawei",
+            "host": "192.168.11.11",
+            "username": "mochine",
+            "password": "child233"
+        }
+    }
+    
+,
+
+    {
+        "name": "192.168.11.12",
+        "connection_info": {
+            "device_type": "huawei",
+            "host": "192.168.11.12",
+            "username": "ASIDHKAJS",
+            "password": "child233"
+        }
+    }
+    
+,
+
+    {
+        "name": "192.168.11.13",
+        "connection_info": {
+            "device_type": "huawei",
+            "host": "192.168.11.13",
+            "username": "mochine",
+            "password": "child233"
+        }
+    }
+    
+,
+
+    {
+        "name": "192.168.11.190",
+        "connection_info": {
+            "device_type": "huawei",
+            "host": "192.168.11.190",
+            "username": "mochine",
+            "password": "child233"
+        }
+    }
+    
+,
+
+    {
+        "name": "192.168.11.100",
+        "connection_info": {
+            "device_type": "huawei",
+            "host": "192.168.11.100",
+            "username": "mochine",
+            "password": "child233"
+        }
+    }
+   ]

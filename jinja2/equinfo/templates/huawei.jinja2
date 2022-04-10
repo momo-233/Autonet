@@ -1,0 +1,15 @@
+[
+    {% for ip,uname in info.items() %}
+    {
+        "name": {{ip}},
+        "connection_info": {
+            "device_type": "huawei",
+            "host": {{ip}},
+            "username": {{uname}},
+            "password": "child233"
+        }
+    }
+    
+,
+{% endfor %}
+]

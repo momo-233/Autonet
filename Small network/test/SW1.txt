@@ -1,0 +1,10 @@
+q
+u t m
+sys SW1
+
+
+trunk {'vlan': 'zgasd'}
+    
+
+
+

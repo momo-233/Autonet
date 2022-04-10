@@ -1,0 +1,16 @@
+q
+u t m
+sy
+sy {{name}}
+vlan {{vlan_id}}
+
+int {{ports_access}}
+port link-type access
+port default vlan {{vlan_id}}
+
+{% for ports in ports_trunk %}
+int {{ports}}
+port link-type trunk
+port trunk allow-pass vlan 200
+{% endfor %}
+{#至此完成二层端口类型配置#}
