@@ -43,6 +43,8 @@ stp instance 2 root primary
 
 
 
+
+
 int vlan 10
 ip add 192.168.10.1 24
 
@@ -83,9 +85,8 @@ vrrp vrid 30 priority 120
 
 int vlan 40
 vrrp vrid 40 priority 120
-
-int vlan 200
-vrrp vrid 200 priority 120
  
+
+
 
 

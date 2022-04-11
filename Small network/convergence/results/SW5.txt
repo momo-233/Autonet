@@ -43,6 +43,8 @@ stp instance 2 root secondary
 
 
 
+
+
 int vlan 10
 ip add 192.168.10.1 24
 
@@ -78,14 +80,16 @@ vrrp vrid 200 virtual-ip 192.168.200.254
 
 
 
-int vlan 30
-vrrp vrid 30 priority 120
+int vlan 10
+vrrp vrid 10 priority 120
 
-int vlan 40
-vrrp vrid 40 priority 120
+int vlan 20
+vrrp vrid 20 priority 120
 
 int vlan 200
 vrrp vrid 200 priority 120
  
+
+
 
 
