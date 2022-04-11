@@ -16,6 +16,3 @@ port trunk allow-pass vlan 200
 int g0/0/2
 port link-type trunk
 port trunk allow-pass vlan 200
-
-
-上传测试！
