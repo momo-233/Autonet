@@ -1,0 +1,14 @@
+q
+u t m
+sy
+sys {{name}}
+{#基本设备信息配置#}
+
+{% for pool in ippool %}
+ip pool vlan{{pool.names}}
+gateway-list {{pool.gateway}}
+network {{pool.network}}
+excluded-ip-address {{pool.excluded}}
+q
+{% endfor %} 
+{#完成配置虚拟接口地址池#} 
