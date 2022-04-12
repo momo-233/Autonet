@@ -2,7 +2,7 @@ q
 u t m
 
 sys
-sys SWSW4
+sys SW4
 vlan batch 10 20 30 40
 
 int g0/0/1

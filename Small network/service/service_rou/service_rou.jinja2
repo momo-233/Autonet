@@ -11,4 +11,7 @@ network {{pool.network}}
 excluded-ip-address {{pool.excluded}}
 q
 {% endfor %} 
-{#完成配置虚拟接口地址池#} 
+{#完成配置虚拟接口地址池#}
+ip rou 0.0.0.0 192.168.200.254
+int g0/0/0
+ip add 192.168.200.5 24

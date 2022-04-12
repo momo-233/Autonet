@@ -47,7 +47,11 @@ vrrp vrid {{vrid}} priority 120
 {% endfor %} 
 {#通过dis vrrp 查看vrrp配置状态#}
 {#至此vrrp配置完毕#}
-
+dncp enable
+{% for vlan in dhcp %}
+int vlan {{vlan}}
+dhcp relay server-ip 192.168.200.5
+{% endfor %}
 
 {#   链路聚合
 int Eth-Trunk 1

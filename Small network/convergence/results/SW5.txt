@@ -10,17 +10,21 @@ int g0/0/1
 port link-type trunk
 port trunk allow-pass vlan 10 20
 
-int g0/0/3
+int g0/0/2
 port link-type trunk
 port trunk allow-pass vlan 10 20
+
+int g0/0/3
+port link-type trunk
+port trunk allow-pass vlan 30 40
 
 int g0/0/4
 port link-type trunk
 port trunk allow-pass vlan 30 40
 
-int g0/0/5
+int g0/0/9
 port link-type trunk
-port trunk allow-pass vlan 30 40
+port trunk allow-pass vlan 200
 
 q
 
@@ -91,5 +95,6 @@ vrrp vrid 200 priority 120
  
 
 
+dncp enable
 
 
