@@ -3,7 +3,7 @@ u t m
 
 sys
 sys SW4
-vlan batch 10 20 30 40
+vlan batch 10 20 30 40 200
 
 int g0/0/1
 port link-type access
@@ -11,11 +11,11 @@ port default vlan 40
 
 int g0/0/2
 port link-type trunk
-port trunk allow-pass vlan 30 40
+port trunk allow-pass vlan 30 40 200
 
 int g0/0/3
 port link-type trunk
-port trunk allow-pass vlan 30 40
+port trunk allow-pass vlan 30 40 200
 
 q
 stp region-configuration
@@ -23,4 +23,3 @@ region-name simp
 instance 1 vlan 10 20
 instance 2 vlan 30 40
 active region-configuration
- 

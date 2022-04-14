@@ -1,20 +1,20 @@
 - name: SW1
-  vlans: 10 20 30 40
+  vlans: 10 20 30 40 200
   vlan: 10
   trunk_vlan: 10 20 200
 
 - name: SW2
   vlans: 10 20 30 40 200
   vlan: 20
-  trunk_vlan: 10 20
+  trunk_vlan: 10 20 200
 
 - name: SW3
-  vlans: 10 20 30 40
+  vlans: 10 20 30 40 200
   vlan: 30
   trunk_vlan: 30 40 200
 
 - name: SW4
-  vlans: 10 20 30 40
+  vlans: 10 20 30 40 200
   vlan: 40
   trunk_vlan: 30 40 200
 

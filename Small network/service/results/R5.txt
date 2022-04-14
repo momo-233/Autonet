@@ -35,4 +35,4 @@ ip rou 0.0.0.0 0 192.168.200.254
 int g0/0/0
 ip add 192.168.200.5 24
 dhcp select global
-
+ 

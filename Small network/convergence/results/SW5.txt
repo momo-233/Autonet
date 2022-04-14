@@ -8,19 +8,19 @@ vlan batch 10 20 30 40 200
 
 int g0/0/1
 port link-type trunk
-port trunk allow-pass vlan 10 20
+port trunk allow-pass vlan 10 20 200
 
 int g0/0/2
 port link-type trunk
-port trunk allow-pass vlan 10 20
+port trunk allow-pass vlan 10 20 200
 
 int g0/0/3
 port link-type trunk
-port trunk allow-pass vlan 30 40
+port trunk allow-pass vlan 30 40 200
 
 int g0/0/4
 port link-type trunk
-port trunk allow-pass vlan 30 40
+port trunk allow-pass vlan 30 40 200
 
 int g0/0/9
 port link-type trunk
