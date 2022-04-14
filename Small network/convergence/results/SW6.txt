@@ -1,0 +1,111 @@
+q
+u t m
+
+sys
+sys SW6
+vlan batch 10 20 30 40 200
+
+
+int g0/0/1
+port link-type trunk
+port trunk allow-pass vlan 10 20
+
+int g0/0/2
+port link-type trunk
+port trunk allow-pass vlan 10 20
+
+int g0/0/3
+port link-type trunk
+port trunk allow-pass vlan 30 40
+
+int g0/0/4
+port link-type trunk
+port trunk allow-pass vlan 30 40
+
+int g0/0/9
+port link-type trunk
+port trunk allow-pass vlan 200
+
+q
+int Eth-Trunk 1
+trunkport g0/0/5 to 0/0/6
+port link trunk
+port trunk allow-pass vlan 10 20 30 40 200
+q   
+
+
+stp enable
+stp mode mstp
+stp region-configuration
+region-name simp
+
+instance 1 vlan 10 20
+
+instance 2 vlan 30 40
+ 
+active region-configuration
+
+q
+stp instance 1 root secondary
+stp instance 2 root primary
+
+
+
+
+
+
+int vlan 10
+ip add 192.168.10.2 24
+
+int vlan 20
+ip add 192.168.20.2 24
+
+int vlan 30
+ip add 192.168.30.2 24
+
+int vlan 40
+ip add 192.168.40.2 24
+
+int vlan 200
+ip add 192.168.200.2 24
+
+
+
+
+int vlan 10
+vrrp vrid 10 virtual-ip 192.168.10.254
+
+int vlan 20
+vrrp vrid 20 virtual-ip 192.168.20.254
+
+int vlan 30
+vrrp vrid 30 virtual-ip 192.168.30.254
+
+int vlan 40
+vrrp vrid 40 virtual-ip 192.168.40.254
+
+int vlan 200
+vrrp vrid 200 virtual-ip 192.168.200.254
+
+
+
+int vlan 30
+vrrp vrid 30 priority 120
+
+int vlan 40
+vrrp vrid 40 priority 120
+ 
+q
+
+
+
+
+dhcp enable 
+
+int vlan 30
+dhcp select relay
+dhcp relay server-ip 192.168.200.5
+
+int vlan 40
+dhcp select relay
+dhcp relay server-ip 192.168.200.5

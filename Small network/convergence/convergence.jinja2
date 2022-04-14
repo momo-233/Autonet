@@ -11,6 +11,11 @@ port link-type trunk
 port trunk allow-pass vlan {{trunk_vlan}}
 {% endfor %}
 q
+int Eth-Trunk 1
+trunkport g{{ports}}
+port link trunk
+port trunk allow-pass vlan {{ethvlan}}
+q   
 {#至此完成二层端口类型配置#}
 
 stp enable
@@ -45,17 +50,14 @@ vrrp vrid {{vlanif}} virtual-ip {{ipadd}}
 int vlan {{vrid}}
 vrrp vrid {{vrid}} priority 120
 {% endfor %} 
+q
 {#通过dis vrrp 查看vrrp配置状态#}
 {#至此vrrp配置完毕#}
-dncp enable
+
+
+dhcp enable 
 {% for vlan in dhcp %}
 int vlan {{vlan}}
+dhcp select relay
 dhcp relay server-ip 192.168.200.5
 {% endfor %}
-
-{#   链路聚合
-int Eth-Trunk 1
-{% for ports in port_aggregation %}
-trunk port g{{ports}}
-{% endfor %}    
-                                    #}
