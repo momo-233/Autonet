@@ -1,4 +1,4 @@
-- name: R5
+- name: AR1
   ippool:
     - names: 10
       gateway: 192.168.10.254

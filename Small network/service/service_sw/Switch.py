@@ -9,7 +9,7 @@ with open('.\\service_sw.yaml') as f:
 
 for sw in sws:
     swx_conf = sw['name'] + '.txt'
-    with open(f'..\\results\{swx_conf}', 'w') as f:
+    with open(f'..\..\\results\{swx_conf}', 'w') as f:
         f.write(template.render(sw))
 
 

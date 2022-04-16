@@ -1,10 +1,10 @@
 [
     
     {
-        "name": "192.168.10.11",
+        "name": "SW1",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.11",
+            "host": "192.168.11.11",
             "username": "mochine",
             "password": "child233"
         }
@@ -13,10 +13,10 @@
 ,
 
     {
-        "name": "192.168.10.12",
+        "name": "SW2",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.12",
+            "host": "192.168.11.12",
             "username": "mochine",
             "password": "child233"
         }
@@ -25,10 +25,10 @@
 ,
 
     {
-        "name": "192.168.10.13",
+        "name": "SW3",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.13",
+            "host": "192.168.11.13",
             "username": "mochine",
             "password": "child233"
         }
@@ -37,10 +37,10 @@
 ,
 
     {
-        "name": "192.168.10.14",
+        "name": "SW4",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.14",
+            "host": "192.168.11.14",
             "username": "mochine",
             "password": "child233"
         }
@@ -49,10 +49,10 @@
 ,
 
     {
-        "name": "192.168.10.15",
+        "name": "SW5",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.15",
+            "host": "192.168.11.15",
             "username": "mochine",
             "password": "child233"
         }
@@ -61,10 +61,10 @@
 ,
 
     {
-        "name": "192.168.10.16",
+        "name": "SW6",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.16",
+            "host": "192.168.11.16",
             "username": "mochine",
             "password": "child233"
         }
@@ -73,10 +73,10 @@
 ,
 
     {
-        "name": "192.168.10.17",
+        "name": "SW7",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.17",
+            "host": "192.168.11.17",
             "username": "mochine",
             "password": "child233"
         }
@@ -85,10 +85,10 @@
 ,
 
     {
-        "name": "192.168.10.21",
+        "name": "AR1",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.21",
+            "host": "192.168.11.21",
             "username": "mochine",
             "password": "child233"
         }
@@ -97,10 +97,10 @@
 ,
 
     {
-        "name": "192.168.10.22",
+        "name": "AR2",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.22",
+            "host": "192.168.11.22",
             "username": "mochine",
             "password": "child233"
         }
@@ -109,10 +109,10 @@
 ,
 
     {
-        "name": "192.168.10.23",
+        "name": "AR3",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.23",
+            "host": "192.168.11.23",
             "username": "mochine",
             "password": "child233"
         }
@@ -121,10 +121,10 @@
 ,
 
     {
-        "name": "192.168.10.24",
+        "name": "AR4",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.24",
+            "host": "192.168.11.24",
             "username": "mochine",
             "password": "child233"
         }
@@ -133,10 +133,10 @@
 ,
 
     {
-        "name": "192.168.10.25",
+        "name": "AR5",
         "connection_info": {
             "device_type": "huawei",
-            "host": "192.168.10.25",
+            "host": "192.168.11.25",
             "username": "mochine",
             "password": "child233"
         }

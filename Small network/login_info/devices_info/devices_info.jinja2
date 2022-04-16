@@ -1,12 +1,12 @@
 [
-    {% for ip,uname in info.items() %}
+    {% for info in ssh %}
     {
-        "name": {{ip}},
+        "name": {{info.name}},
         "connection_info": {
             "device_type": "huawei",
-            "host": {{ip}},
-            "username": {{uname}},
-            "password": "child233"
+            "host": {{info.ip}},
+            "username": {{info.sshname}},
+            "password": {{info.sshpasswd}}
         }
     }
     

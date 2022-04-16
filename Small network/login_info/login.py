@@ -17,8 +17,9 @@ with open ('info.json') as f:
                 print(f'已成功登录网络设备{hostname}')
                 output = conn.send_command('display cur | inc sysname')
                 print(output)
-                # output = conn.send_config_from_file(input('请输入一个文件路径:'))
-                # print(output)
+                output = conn.send_config_from_file(input('请输入一个文件路径:'))
+                print(output)
+                print('正在登陆！')
         
         except netmiko.NetmikoAuthenticationException:
             print(device['name'] + "用户验证失败！")

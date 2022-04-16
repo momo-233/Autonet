@@ -17,13 +17,13 @@ user-interface vty 0 4
 
 
 
- sysname Layer3Switch-1
+ sysname SW2
 aaa
  local-user mochine password cipher child233
  local-user mochine privilege level 3
  local-user mochine service-type ssh
 interface Vlanif1
- ip address 192.168.10.22 255.255.255.0
+ ip address 192.168.11.12 255.255.255.0
 stelnet server enable
 ssh authentication-type default password
 user-interface vty 0 4
@@ -31,11 +31,12 @@ user-interface vty 0 4
  protocol inbound ssh
 
 
- aaa
+
+ sysname AR2
+aaa
  local-user mochine password cipher child233
  local-user mochine privilege level 3
  local-user mochine service-type ssh
-
 stelnet server enable
 user-interface vty 0 4
  authentication-mode aaa

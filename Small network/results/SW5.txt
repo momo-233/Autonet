@@ -122,6 +122,7 @@ int vlan 20
 dhcp select relay
 dhcp relay server-ip 192.168.200.5
 
+q
 
 
 
@@ -148,3 +149,6 @@ network 192.168.30.0 0.0.0.255
 ospf 1
 area 4
 network 192.168.40.0 0.0.0.255
+ 
+
+ 
