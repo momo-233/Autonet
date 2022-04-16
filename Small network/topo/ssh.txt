@@ -1,0 +1,42 @@
+sysname Layer3Switch-1
+aaa
+# 密码明文 123
+ local-user mochine password cipher child233
+ local-user mochine privilege level 3
+ local-user mochine service-type ssh
+interface Vlanif1
+ ip address 192.168.10.11 255.255.255.0
+stelnet server enable
+# 下面这条很关键，我一开始没配置这条，一直 ssh 反馈有错误。
+# 模拟器的产品手册说这条是默认值，但测试后需要手动配置。
+ssh authentication-type default password
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+
+
+
+
+ sysname Layer3Switch-1
+aaa
+ local-user mochine password cipher child233
+ local-user mochine privilege level 3
+ local-user mochine service-type ssh
+interface Vlanif1
+ ip address 192.168.10.22 255.255.255.0
+stelnet server enable
+ssh authentication-type default password
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+
+
+ aaa
+ local-user mochine password cipher child233
+ local-user mochine privilege level 3
+ local-user mochine service-type ssh
+
+stelnet server enable
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh

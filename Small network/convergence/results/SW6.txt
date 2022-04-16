@@ -3,7 +3,7 @@ u t m
 
 sys
 sys SW6
-vlan batch 10 20 30 40 200
+vlan batch 10 20 30 40 70 90 200
 
 
 int g0/0/1
@@ -28,7 +28,11 @@ port trunk allow-pass vlan 200
 
 q
 int Eth-Trunk 1
-trunkport g0/0/5 to 0/0/6
+
+trunkport g0/0/5
+
+trunkport g0/0/6
+
 port link trunk
 port trunk allow-pass vlan 10 20 30 40 200
 q   
@@ -66,6 +70,12 @@ ip add 192.168.30.2 24
 int vlan 40
 ip add 192.168.40.2 24
 
+int vlan 70
+ip add 192.168.70.2 24
+
+int vlan 90
+ip add 192.168.90.2 24
+
 int vlan 200
 ip add 192.168.200.2 24
 
@@ -99,7 +109,6 @@ q
 
 
 
-
 dhcp enable 
 
 int vlan 30
@@ -109,3 +118,30 @@ dhcp relay server-ip 192.168.200.5
 int vlan 40
 dhcp select relay
 dhcp relay server-ip 192.168.200.5
+
+
+
+
+ospf 1
+area 0
+network 192.168.70.2 0.0.0.0
+
+ospf 1
+area 0
+network 192.168.90.2 0.0.0.0
+
+ospf 1
+area 1
+network 192.168.10.0 0.0.0.255
+
+ospf 1
+area 2
+network 192.168.20.0 0.0.0.255
+
+ospf 1
+area 3
+network 192.168.30.0 0.0.0.255
+
+ospf 1
+area 4
+network 192.168.40.0 0.0.0.255

@@ -12,7 +12,9 @@ port trunk allow-pass vlan {{trunk_vlan}}
 {% endfor %}
 q
 int Eth-Trunk 1
-trunkport g{{ports}}
+{% for port in ethport %}
+trunkport g{{port}}
+{% endfor %}
 port link trunk
 port trunk allow-pass vlan {{ethvlan}}
 q   
@@ -54,10 +56,19 @@ q
 {#通过dis vrrp 查看vrrp配置状态#}
 {#至此vrrp配置完毕#}
 
-
 dhcp enable 
 {% for vlan in dhcp %}
 int vlan {{vlan}}
 dhcp select relay
 dhcp relay server-ip 192.168.200.5
 {% endfor %}
+q
+{# DHCP中继服务配置完毕 #}
+
+{% for info in ospf %}
+ospf {{info.ospf}}
+area {{info.area}}
+network {{info.network}}
+{% endfor %}
+{# 汇聚层链路通过ospf宣告完成 #}
+ 
