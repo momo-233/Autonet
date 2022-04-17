@@ -16,23 +16,36 @@ user-interface vty 0 4
 
 
 
-
- sysname SW2
+u t m
+sy
+ sysname SW7
 aaa
  local-user mochine password cipher child233
  local-user mochine privilege level 3
  local-user mochine service-type ssh
 interface Vlanif1
- ip address 192.168.11.12 255.255.255.0
+ ip address 192.168.11.17 255.255.255.0
 stelnet server enable
 ssh authentication-type default password
 user-interface vty 0 4
  authentication-mode aaa
  protocol inbound ssh
+ q
+ q
+ save
+ y
+7.cfg
+ 
+
+ 
 
 
 
- sysname AR2
+
+u t m
+sy
+
+ sysname AR4
 aaa
  local-user mochine password cipher child233
  local-user mochine privilege level 3

@@ -12,5 +12,9 @@ port default vlan {{vlan_id}}
 int {{ports}}
 port link-type trunk
 port trunk allow-pass vlan 200
+q
 {% endfor %}
+
+int vlan {{vlan_id}}
+ip add {{dhcp_ip}}
 {#至此完成二层端口类型配置#}

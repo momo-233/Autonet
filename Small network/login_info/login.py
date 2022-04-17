@@ -29,11 +29,11 @@ with open ('info.json') as f:
             print(device['name'] + "目标不可达！")
             switch_not_reachable.append(device['connection_info']['host'])
         
-print('\n ====结果输出====')
+print('\n ====结果输出====') 
 print('*下列交换机用户验证失败: ')
 for i in switch_with_authentication_issue:
     print(f'  {i}')
 
 print('*下列交换机不可达: ')
 for i in switch_not_reachable:
-    print(f'  {i}')                                                                                                                                                             
+    print(f'  {i}')                                                                                                                                      
