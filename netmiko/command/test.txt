@@ -1,2 +1,0 @@
-int g0/0/1
-description Netmiko2.py
