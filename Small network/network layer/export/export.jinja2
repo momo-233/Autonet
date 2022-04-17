@@ -1,0 +1,33 @@
+q
+u t m
+sy 
+sy {{name}}
+
+{% for port,ipadd in ports.items() %}
+int g{{port}}
+ip add {{ipadd}}
+{% endfor %}
+q
+{#链路配置完毕#}
+
+acl {{acl}}
+{% for permit_ip in permit_acl %}
+rule permit source {{permit_ip}}
+{% endfor %}
+q
+{#acl仅放行四个工作区域的ip地址配置完毕#}
+
+{% for port,acl in apply.items() %}
+int g{{port}}
+nat outbound {{acl}}
+{% endfor %}
+q
+{#将nat启用在接口下并绑定acl#}
+
+ospf
+default-route-advertise always {#出口设备配置一条默认路由#}
+
+
+
+
+

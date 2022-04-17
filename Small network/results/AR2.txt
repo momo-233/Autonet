@@ -1,0 +1,37 @@
+q
+u t m
+sy 
+sy AR2
+
+
+int g0/0/0
+ip add 192.168.60.10 24
+
+int g0/0/1
+ip add 192.168.33.10 24
+
+int g2/0/0
+ip add 192.168.13.10 24
+
+int g0/0/2
+ip add 192.168.70.10 24
+
+q
+
+
+
+ospf 1
+area 0
+network 192.168.60.10 0.0.0.0
+
+ospf 1
+area 0
+network 192.168.70.10 0.0.0.0
+
+ospf 1
+area 0
+network 192.168.13.10 0.0.0.0
+
+ospf 1
+area 0
+network 192.168.33.10 0.0.0.0

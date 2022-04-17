@@ -26,7 +26,18 @@ int g0/0/9
 port link-type trunk
 port trunk allow-pass vlan 200
 
+
+
+int g0/0/7
+port link-type access
+port default vlan 60
+
+int g0/0/8
+port link-type access
+port default vlan 80
+
 q
+
 int Eth-Trunk 1
 
 trunkport g0/0/5
@@ -149,6 +160,4 @@ network 192.168.30.0 0.0.0.255
 ospf 1
 area 4
 network 192.168.40.0 0.0.0.255
- 
 
- 

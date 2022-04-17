@@ -1,0 +1,5 @@
+ssh:
+  - name: '"AR4"'
+    ip: '"192.168.11.24"'
+    sshname: '"mochine"'
+    sshpasswd: '"child233"'

@@ -8,8 +8,6 @@ int g{{port}}
 ip add {{ipadd}}
 {% endfor %}
 q
-{# 链路配置 #}
-
 {% for info in ospf %}
 ospf {{info.ospf}}
 area {{info.area}}

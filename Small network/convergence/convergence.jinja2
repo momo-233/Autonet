@@ -10,7 +10,14 @@ int g{{ports}}
 port link-type trunk
 port trunk allow-pass vlan {{trunk_vlan}}
 {% endfor %}
+
+{% for ports,default_vlan in accessvlan.items() %}
+int g{{ports}}
+port link-type access
+port default vlan {{default_vlan}}
+{% endfor %}
 q
+
 int Eth-Trunk 1
 {% for port in ethport %}
 trunkport g{{port}}
@@ -71,4 +78,3 @@ area {{info.area}}
 network {{info.network}}
 {% endfor %}
 {# 汇聚层链路通过ospf宣告完成 #}
- 

@@ -133,6 +133,18 @@
 ,
 
     {
+        "name": "R4",
+        "connection_info": {
+            "device_type": "huawei",
+            "host": "192.168.11.24",
+            "username": "mochine",
+            "password": "child233"
+        }
+    }
+    
+,
+
+    {
         "name": "AR5",
         "connection_info": {
             "device_type": "huawei",

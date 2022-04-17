@@ -12,6 +12,7 @@ with open ('info.json') as f:
     devices = json.load(f)
     for device in devices:
         try:
+            print('正在登陆中，请稍后...')
             with ConnectHandler(**device['connection_info']) as conn:
                 hostname = device['name']
                 print(f'已成功登录网络设备{hostname}')
@@ -19,7 +20,7 @@ with open ('info.json') as f:
                 print(output)
                 output = conn.send_config_from_file(input('请输入一个文件路径:'))
                 print(output)
-                print('正在登陆！')
+                print('配置上传完成！')
         
         except netmiko.NetmikoAuthenticationException:
             print(device['name'] + "用户验证失败！")

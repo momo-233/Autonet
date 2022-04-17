@@ -1,0 +1,15 @@
+[
+    {% for info in ssh %}
+    {
+        "name": {{info.name}},
+        "connection_info": {
+            "device_type": "huawei",
+            "host": {{info.ip}},
+            "username": {{info.sshname}},
+            "password": {{info.sshpasswd}}
+        }
+    }
+    
+,
+{% endfor %}
+]

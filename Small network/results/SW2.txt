@@ -23,4 +23,3 @@ region-name simp
 instance 1 vlan 10 20
 instance 2 vlan 30 40
 active region-configuration
- 
