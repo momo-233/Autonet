@@ -14,7 +14,6 @@ print(result,file=f)
 f.close()
 
 
-
 #删除逗号
 # 在文本文件中，若没有使用b模式选项打开的文件，只允许从文件头开始计算相对位置，从文件尾计算时就会引发异常
 file_old = open(r'../info.json','rb+')

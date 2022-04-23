@@ -2,9 +2,9 @@ from jinja2 import Environment,FileSystemLoader
 import yaml
 
 env = Environment(loader=FileSystemLoader('.\\'))
-template = env.get_template('export.jinja2')
+template = env.get_template('access.jinja2')
 
-with open('.\export.yaml') as f:
+with open('.\\access.yaml') as f:
     sws = yaml.safe_load(f)
 
 for sw in sws:
@@ -13,4 +13,4 @@ for sw in sws:
         f.write(template.render(sw))
 
 
-print(sw['name'] + "文件生成完毕！") 
+print("文件生成完毕！") 

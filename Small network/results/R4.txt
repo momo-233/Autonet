@@ -1,8 +1,3 @@
-q
-u t m
-sy 
-sy R4
-
 
 int g0/0/2
 ip add 100.1.34.13 24

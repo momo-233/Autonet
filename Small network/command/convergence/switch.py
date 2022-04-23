@@ -2,9 +2,9 @@ from jinja2 import Environment,FileSystemLoader
 import yaml
 
 env = Environment(loader=FileSystemLoader('.\\'))
-template = env.get_template('service_rou.jinja2')
+template = env.get_template('convergence.jinja2')
 
-with open('.\\service_rou.yaml') as f:
+with open('.\\convergence.yaml') as f:
     sws = yaml.safe_load(f)
 
 for sw in sws:

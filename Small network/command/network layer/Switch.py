@@ -2,14 +2,14 @@ from jinja2 import Environment,FileSystemLoader
 import yaml
 
 env = Environment(loader=FileSystemLoader('.\\'))
-template = env.get_template('access.jinja2')
+template = env.get_template('network.jinja2')    
 
-with open('.\\access.yaml') as f:
+with open('.\\network.yaml') as f:       #注意斜杠转义问题
     sws = yaml.safe_load(f)
 
 for sw in sws:
     swx_conf = sw['name'] + '.txt'
-    with open(f'..\\results\{swx_conf}', 'w') as f:
+    with open(f'..\..\\results\{swx_conf}', 'w') as f:
         f.write(template.render(sw))
 
 

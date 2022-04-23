@@ -37,4 +37,4 @@ for i in switch_with_authentication_issue:
 
 print('*下列交换机不可达: ')
 for i in switch_not_reachable:
-    print(f'  {i}')                                                                                                                                      
+    print(f'  {i}')
