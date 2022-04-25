@@ -38,4 +38,3 @@ file.seek(0)
 file.write(']')
 file_old.close()
 print('登录信息生成完毕!!')
-
